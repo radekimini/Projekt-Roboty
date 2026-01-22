@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>ur5_project</name>
+  <version>0.1.0</version>
+  <description>UR5 ROS2 Python project</description>
+
+  <maintainer email="student@student.com">student</maintainer>
+  <license>MIT</license>
+
+  <!-- build system -->
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <!-- runtime -->
+  <depend>control_msgs</depend>
+
+  <depend>rclpy</depend>
+  <depend>trajectory_msgs</depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
