@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>robot_control_interface</name>
+  <version>0.0.1</version>
+  <description>Simple ROS2 interface for robot control based on image click</description>
+
+  <maintainer email="radoslaw.olejniczak@student.put.poznan.pl">Radosław Olejniczak</maintainer>
+  <author email="marcin.birosz@student.put.poznan.pl">Marcin Birosz</author>
+  <license>Apache License 2.0</license>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
