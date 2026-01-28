@@ -27,6 +27,12 @@ def generate_launch_description():
         ],
         output='screen'
     )
+    
+    odom_logger = Node(
+        package='robot_control_interface',
+        executable='odom_logger_node',
+        output='screen'
+    )
 
     click_node = Node(
         package='robot_control_interface',
