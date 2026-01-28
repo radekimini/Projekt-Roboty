@@ -17,6 +17,20 @@ class OdomLogger(Node):
         )
 
         self.get_logger().info('Odom logger node started')
+        
+        def odom_callback(self, msg):
+        x = msg.pose.pose.position.x
+        y = msg.pose.pose.position.y
+
+        if self.last_x is None or self.last_y is None:
+            self.last_x = x
+            self.last_y = y
+            return
+
+        if x != self.last_x or y != self.last_y:
+            self.get_logger().info(f'Robot position changed: x={x:.3f}, y={y:.3f}')
+            self.last_x = x
+            self.last_y = y
 
   def main(args=None):
     rclpy.init(args=args)
