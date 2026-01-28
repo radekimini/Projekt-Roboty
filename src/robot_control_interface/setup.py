@@ -1,3 +1,5 @@
+import os
+from glob import glob
 from setuptools import setup
 
 package_name = 'robot_control_interface'
@@ -13,8 +15,10 @@ setup(
     ],
     data_files=[
         ('share/ament_index/resource_index/packages',
-         ['resource/' + package_name]),
-        ('share/' + package_name, ['package.xml']),
+         ['resource/robot_control_interface']),
+        ('share/robot_control_interface', ['package.xml']),
+        (os.path.join('share', 'robot_control_interface', 'launch'),
+         glob('launch/*.launch.py')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -27,6 +31,7 @@ setup(
             'camera_node = robot_control_interface.camera_node:main',
             'controller_node = robot_control_interface.controller_node:main',
             'click_control_node = robot_control_interface.nodes.click_control_node:main',
+            'odom_logger_node = robot_control_interface.nodes.odom_logger:main',
         ],
     },
 )
